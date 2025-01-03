@@ -1,0 +1,17 @@
+void main() {
+  int n = 20;
+
+  print("Even numbers in reverse order:");
+  for (int i = n; i >= 1; i--) {
+    if (i % 2 == 0) {
+      print(i);
+    }
+  }
+
+  print("Odd numbers in reverse order:");
+  for (int i = n; i >= 1; i--) {
+    if (i % 2 != 0) {
+      print(i);
+    }
+  }
+}
