@@ -1,0 +1,18 @@
+void main() {
+ int num=1001;
+ int count=0;
+ while(num!=0){
+   num ~/= 10;
+   count++;
+ }
+  print('The number of count of num: ${count}');
+}
+
+
+//By converting number to string
+void main() {
+ int num=123456789;
+ int count=num.toString().length;
+  
+print('The number of count of num: ${count}');
+}
