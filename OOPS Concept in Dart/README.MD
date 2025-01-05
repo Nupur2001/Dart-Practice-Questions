@@ -1,4 +1,3 @@
-/*
 ### Constructors in Dart:
 
 - **Constructor**: A constructor is a special function inside a class that is used to initialize objects when they are created. It has the same name as the class and is called automatically when an object is instantiated.
@@ -21,4 +20,4 @@
 
 ### Using Constructors Effectively:
 - Constructors are essential to initializing an object with specific data when it is created, and using named arguments with `required` ensures that the object is always initialized with necessary values.
-*/
+
