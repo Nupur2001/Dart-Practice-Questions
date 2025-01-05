@@ -1,0 +1,24 @@
+void main() {
+  // Accessing static variables and methods using the class name
+  print(Constants.greeting);  // Prints the static variable 'greeting' of the Constants class
+  print(Constants.greetingBye);  // Prints the static variable 'greetingBye' of the Constants class
+  print(Constants.giveMeSomeValue());  // Calls the static function 'giveMeSomeValue' of the Constants class
+  print(Constants.height);  // Prints the static variable 'height' of the Constants class
+}
+
+class Constants {
+  // Constructor (not required for static members)
+  Constants() {
+    print("Constructor called");
+  }
+
+  // Static Variables: Shared across all instances of the class
+  static int height = 10;
+  static String greeting = "Hello";
+  static String greetingBye = "Bye";
+
+  // Static Functions: Can be called using the class name without creating an instance
+  static giveMeSomeValue() {
+    return height;  // Returns the value of the static variable 'height'
+  }
+}
