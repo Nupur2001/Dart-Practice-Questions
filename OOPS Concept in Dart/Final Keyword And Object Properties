@@ -1,0 +1,40 @@
+void main() {
+  // Creating an instance of the Cookie class using 'final'
+  final cookie = Cookie(); // 'final' means the reference to 'cookie' cannot be reassigned (i.e., cookie can't point to a new instance).
+  
+  // Initially printing the value of 'shape' which is set to "Star" by default
+  print(cookie.shape);  // Output: Star
+  
+  // Changing the 'shape' value to "Circle"
+  cookie.shape = "Circle"; // The 'final' keyword prevents reassignment of the 'cookie' variable itself,
+                           // but doesn't prevent changing the properties (e.g., shape) of the object it references.
+  
+  // Printing the new value of 'shape' after modification
+  print(cookie.shape);  // Output: Circle
+  
+  // Printing the 'quantity' property of the cookie (default value 2)
+  print(cookie.quantity); // Output: 2
+  
+  // Calling the 'baking' method to simulate the baking process
+  cookie.baking(); // Output: The baking process has been initiated.
+  
+  // Calling the 'isBaked' method to check the baking status (returns 'false')
+  print(cookie.isBaked()); // Output: false
+}
+
+class Cookie {
+  // Instance Variables -> Represent the data specific to each Cookie instance
+  String shape = "Star";  // Default shape of the cookie is "Star"
+  int quantity = 2;       // Default quantity of cookies is 2
+  
+  // Method -> Represents the behavior or actions of the class
+  void baking() {
+    // Simulates the baking process of a cookie
+    print("The baking process has been initiated.");
+  }
+  
+  bool isBaked() {
+    // Returns the baked status of the cookie (currently returns false)
+    return false;
+  }
+}
