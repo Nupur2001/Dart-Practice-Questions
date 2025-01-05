@@ -1,0 +1,57 @@
+void main() {
+  
+  // Creating an instance of Cookie class with named arguments using the constructor
+  final cookie = Cookie(shape: "Star", quantity: 2);
+  print(cookie.shape);  // Printing the shape of the cookie
+  print('${cookie.quantity} pcs will be served');  // Printing the quantity of the cookie
+  print(cookie.calculateSize());  // Printing the size of the cookie
+  
+  // Accessing private variable '_height' through getter
+  print('The height of the cookie: ${cookie.height}');  // Using getter to access height
+  
+  // Modifying private variable '_height' using setter
+  cookie.setHeight = 5;
+  
+  // Accessing the modified height using getter
+  print('The height of the cookie: ${cookie.height}');  // Using getter after modification
+}
+
+class Cookie {
+  
+  // Constructor with required named parameters
+  final String shape;
+  final int quantity;
+  final double size;
+
+  Cookie({required this.shape, required this.quantity, this.size = 0.0}) {
+    print("Cookie Constructor Called");
+    baking();
+  }
+  
+  // Private Variables: Variables with a leading underscore are private to the class
+  int _height = 2;  // Private variable representing the height of the cookie
+  int _width = 3;   // Private variable representing the width of the cookie
+  
+  // Getter for height: Allows access to the private '_height' variable
+  int get height => _height;
+
+  // Setter for height: Allows modification of the private '_height' variable
+  set setHeight(int h) {
+    _height = h;  // Sets the value of '_height' to the new value
+  }
+
+  // Method to calculate the size of the cookie
+  int calculateSize() {
+    return _height * _width;  // Returns the size (area) based on height and width
+  }
+  
+  // Method representing the baking process
+  void baking() {
+    print('Your cookie which is in shape ${shape} is in the baking process.');
+  }
+  
+  // Method to check if the cookie is baked (currently returns false)
+  bool isBaked() {
+    return false;
+  }
+}
