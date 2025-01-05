@@ -33,3 +33,16 @@
 - A **setter** allows you to modify a private variable outside the class. In this case, the setter `setHeight` is used to change the value of the private variable `_height`.
 - The setter is defined with the `set` keyword: `set setHeight(int h) { _height = h; }`.
 
+### Static Variables:
+- **Static variables** belong to the class itself rather than to instances of the class. They are shared across all instances.
+- Static variables are accessed using the class name, without the need to create an instance of the class. For example, `Constants.height` and `Constants.greeting` are static variables.
+- Static variables retain their value across all instances of the class.
+
+### Static Functions:
+- **Static functions** belong to the class, not to any instance of the class. They can be called without creating an instance of the class.
+- Static functions can access other static variables and functions but cannot access instance variables or methods.
+- In this example, `giveMeSomeValue()` is a static function that can be called using `Constants.giveMeSomeValue()`.
+
+### Example:
+- The `Constants` class has static variables like `greeting`, `greetingBye`, and `height`, and a static function `giveMeSomeValue()`. These static members are accessed using the class name directly.
+
