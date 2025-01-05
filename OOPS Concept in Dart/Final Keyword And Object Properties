@@ -38,3 +38,20 @@ class Cookie {
     return false;
   }
 }
+
+
+
+
+
+/*
+Why is creating an instance of classes in variables necessary?
+
+- When we create an instance of a class (e.g., 'cookie = Cookie()'), we are allocating memory for the object and gaining access to its properties and methods.
+- Variables store references to these objects, allowing us to interact with their data and behavior.
+
+What happens if no instance is created (using 'final' or by creating an instance of the Cookie class)?
+
+- If no instance is created, we won't be able to access or modify the class's properties or methods. The object doesn't exist in memory.
+- Without an instance, there is no data to modify or print, so no output will be generated.
+- Even if the variable is marked `final`, the reference to the object cannot be reassigned, but we still need to create an object to interact with it.
+*/
