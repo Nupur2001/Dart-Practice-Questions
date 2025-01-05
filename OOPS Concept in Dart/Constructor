@@ -1,0 +1,37 @@
+void main() {
+  
+  // Creating an instance of Cookie class with named arguments using the constructor
+  final cookie = Cookie(shape: "Star", quantity: 2); // Passing named arguments to the constructor
+  
+  // Printing the 'shape' property of the cookie
+  print(cookie.shape);  // Output: Star
+  
+  // Printing the 'quantity' property of the cookie with a message
+  print('${cookie.quantity} pcs will be served'); // Output: 2 pcs will be served
+}
+
+class Cookie {
+  
+  // Constructor with named parameters
+  final String shape;
+  final int quantity;
+
+  // Constructor definition using named parameters and 'required' keyword
+  Cookie({required this.shape, required this.quantity}) {
+    // Printing a message when the constructor is called
+    print("Cookie Constructor Called");
+    // Calling the baking method during object creation
+    baking();
+  }
+  
+  // Method to simulate the baking process
+  void baking() {
+    // Prints the shape of the cookie during the baking process
+    print('Your cookie which is in shape ${shape} is in the baking process.');
+  }
+  
+  // Method to check the baking status (currently returns false)
+  bool isBaked() {
+    return false;
+  }
+}
