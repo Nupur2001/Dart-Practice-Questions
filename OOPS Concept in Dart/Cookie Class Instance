@@ -1,37 +1,30 @@
 void main() {
-  // Creating an instance of the Cookie class
-  Cookie cookie = Cookie();
-  
-  // Accessing and printing the instance variables
-  print(cookie.quantity); // Output: 2 (default value of quantity)
-  print(cookie.shape);    // Output: Star (default value of shape)
-  
-  // Calling methods of the Cookie instance
-  cookie.baking();        // Initiates the baking process
-  print(cookie.isBaked()); // Checks and prints if the cookie is baked (false)
+  // Option 1: Using the standard object creation
+  Cookie cookie = Cookie(); // Creating an instance of the Cookie class
+
+  // Option 2: Using the 'final' keyword
+  // final cookie = Cookie(); // Alternative way to create an instance of Cookie
+
+  // Printing the properties of the created Cookie instance
+  print(cookie.quantity);   // Accessing the 'quantity' property of the Cookie
+  print(cookie.shape);      // Accessing the 'shape' property of the Cookie
+  cookie.baking();          // Calling the 'baking' method of the Cookie
+  print(cookie.isBaked());  // Checking if the cookie is baked using the 'isBaked' method
 }
 
 class Cookie {
-  // Instance Variables -> Represent the data stored in each instance
-  String shape = "Star"; // Default shape of the cookie
-  int quantity = 2;      // Default quantity of cookies
+  // Instance Variables -> Represent the data specific to each Cookie instance
+  String shape = "Star";   // Shape of the cookie (default is "Star")
+  int quantity = 2;        // Quantity of cookies (default is 2)
   
-  // Method -> Represents the actions or behaviors of the class
+  // Method -> Represents the behavior or actions of the class
   void baking() {
-    // Prints a message indicating the baking process has started
+    // Simulates the baking process of a cookie
     print("The baking process has been initiated.");
   }
   
   bool isBaked() {
-    // Returns the baked status of the cookie (default: false)
+    // Returns the baked status of the cookie (currently returns false)
     return false;
   }
 }
-
-
-Output:
-2
-Star
-The baking process has been initiated.
-false
-
