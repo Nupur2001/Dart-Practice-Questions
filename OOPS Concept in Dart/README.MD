@@ -21,3 +21,15 @@
 ### Using Constructors Effectively:
 - Constructors are essential to initializing an object with specific data when it is created, and using named arguments with `required` ensures that the object is always initialized with necessary values.
 
+### Private Variables:
+- In Dart, **private variables** are defined by prefixing the variable name with an underscore (`_`). For example, `_height` and `_width` are private variables and cannot be accessed directly outside the `Cookie` class.
+- These variables store data that is specific to the class and should not be modified directly from outside the class.
+
+### Getters:
+- A **getter** allows you to access a private variable outside the class. In this case, the getter `height` is used to access the private variable `_height`.
+- The getter is defined with the `get` keyword: `int get height => _height;`.
+
+### Setters:
+- A **setter** allows you to modify a private variable outside the class. In this case, the setter `setHeight` is used to change the value of the private variable `_height`.
+- The setter is defined with the `set` keyword: `set setHeight(int h) { _height = h; }`.
+
