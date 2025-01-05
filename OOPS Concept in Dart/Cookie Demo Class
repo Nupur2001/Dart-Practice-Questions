@@ -1,0 +1,33 @@
+void main() {
+  // Creating instances of the Cookie class and accessing its properties and methods
+  print(Cookie().quantity); // Accessing the 'quantity' property of a Cookie instance
+  print(Cookie().shape);    // Accessing the 'shape' property of a Cookie instance
+  Cookie().baking();        // Calling the 'baking' method of a Cookie instance
+  print(Cookie().isBaked()); // Checking if the cookie is baked by calling 'isBaked' method
+}
+
+class Cookie {
+  // Instance Variables -> Represent the data specific to each Cookie instance
+  String shape = "Star"; // Shape of the cookie, initialized to "Star"
+  int quantity = 2;      // Quantity of cookies, initialized to 2
+  
+  // Method -> Represents the actions or behaviors of the class
+  void baking() {
+    // Simulates the process of baking cookies
+    print("The baking process has been initiated.");
+  }
+  
+  bool isBaked() {
+    // Returns the baked status of the cookie
+    return false; // Currently, the cookie is not baked
+  }
+}
+
+
+Output:
+2
+Star
+The baking process has been initiated.
+false
+
+
