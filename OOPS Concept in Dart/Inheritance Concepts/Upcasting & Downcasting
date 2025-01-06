@@ -1,0 +1,55 @@
+void main() {
+  // Upcasting: Assigning a subclass object (Car) to a superclass reference (Vehicle)
+  Vehicle car = Car();
+  print("-------Car-------");
+  
+  // Downcasting: Casting Vehicle to Car to access Car-specific property
+  print((car as Car).noOfWheels); // Accessing Car-specific property
+  car.printWheelsCount(); // Calling overridden method from Car class
+  print(car.isEngineWorking); // Accessing inherited property from Vehicle
+  print(car.isLightOn); // Accessing inherited property from Vehicle
+
+  // Upcasting: Assigning a subclass object (Truck) to a superclass reference (Vehicle)
+  Vehicle truck = Truck();
+  print("-------Truck-------");
+  
+  // Downcasting: Casting Vehicle to Truck to access Truck-specific property
+  print((truck as Truck).isLightOn); // Accessing Truck-specific overridden property
+  print(truck.isEngineWorking); // Accessing inherited property from Vehicle
+  print(truck.isLightOn); // Accessing Truck-specific property
+}
+
+class Vehicle {
+  // Base class (parent class) defining common properties and methods
+  int speed = 10; // Speed of the vehicle
+  bool isEngineWorking = true; // Engine status
+  bool isLightOn = false; // Light status
+
+  // Method to accelerate the vehicle
+  void accelerate() {
+    speed += 10;
+  }
+}
+
+class Car extends Vehicle {
+  // Subclass (child class) inheriting from Vehicle
+  int noOfWheels = 4; // Car-specific property
+  
+  // Method specific to Car
+  void printWheelsCount() {
+    print(noOfWheels);
+  }
+}
+
+class Truck extends Vehicle {
+  // Subclass (child class) inheriting from Vehicle
+  int noOfWheels = 8; // Truck-specific property
+  
+  // Method specific to Truck
+  void printWheelsCount() {
+    print(noOfWheels);
+  }
+  
+  // Overriding the isLightOn property
+  final isLightOn = true; // Truck-specific behavior for light
+}
