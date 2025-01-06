@@ -1,0 +1,51 @@
+void main() {
+  // Creating instances of Car and Truck classes
+  Car car = Car();
+  Truck truck = Truck();
+  
+  // Accessing methods and properties inherited from the parent Vehicle class
+  car.printWheelsCount(); // Prints the number of wheels for the Car
+  print(car.isEngineWorking); // Accesses the inherited property 'isEngineWorking'
+  print(car.isLightOn); // Accesses the inherited property 'isLightOn'
+
+  truck.printWheelsCount(); // Prints the number of wheels for the Truck
+  print(truck.isEngineWorking); // Accesses the inherited property 'isEngineWorking'
+  print(truck.isLightOn); // Accesses the Truck-specific 'isLightOn' property (overrides the parent property)
+}
+
+class Vehicle {
+  // Properties common to all vehicles
+  int speed = 10;
+  bool isEngineWorking = true;
+  bool isLightOn = false;
+  
+  // Method to accelerate the vehicle (increases speed by 10)
+  void accelerate() {
+    speed += 10;
+  }
+}
+
+// Car class inherits from Vehicle
+class Car extends Vehicle {
+  // Car-specific property
+  int noOfWheels = 4;
+
+  // Car-specific method
+  void printWheelsCount() {
+    print(noOfWheels); // Prints the number of wheels for a Car
+  }
+}
+  
+// Truck class inherits from Vehicle
+class Truck extends Vehicle {
+  // Truck-specific property
+  int noOfWheels = 8;
+
+  // Truck-specific method
+  void printWheelsCount() {
+    print(noOfWheels); // Prints the number of wheels for a Truck
+  }
+
+  // Overrides the inherited 'isLightOn' property with a final value
+  final bool isLightOn = true;
+}
