@@ -1,0 +1,45 @@
+void main() {
+  // Creating instances of Car and Truck
+  final car = Car();
+  final truck = Truck();
+
+  // Accessing properties specific to Car and Truck
+  print(car.noOfWheels); // Prints the number of wheels in a Car
+  print(truck.noOfWheels); // Prints the number of wheels in a Truck
+}
+
+// Vehicle acts as an interface, defining the contract for other classes
+class Vehicle {
+  // Properties common to all vehicles
+  bool isEngineWorking = true;
+  bool isLightOn = false;
+  int noOfWheels = 4;
+}
+
+// Car class implements the Vehicle interface
+class Car implements Vehicle {
+  // The @override keyword ensures the property or method from Vehicle is redefined in Car
+
+  @override
+  bool isEngineWorking = false;
+
+  @override
+  bool isLightOn = false;
+
+  @override
+  int noOfWheels = 4; // Custom value for noOfWheels specific to Car
+}
+
+// Truck class implements the Vehicle interface
+class Truck implements Vehicle {
+  // Properties from Vehicle are overridden with values specific to Truck
+
+  @override
+  bool isEngineWorking = true;
+
+  @override
+  bool isLightOn = true;
+
+  @override
+  int noOfWheels = 8; // Custom value for noOfWheels specific to Truck
+}
