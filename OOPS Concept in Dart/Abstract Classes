@@ -1,0 +1,24 @@
+void main() {
+  // Creating an instance of the Car class
+  final car = Car();
+
+  // Calling the accelerate method from the Car class
+  car.accelerate();
+}
+
+// Abstract class declaration
+abstract class Vehicle {
+  // Abstract method declaration
+  // This method must be implemented by any subclass of Vehicle
+  void accelerate();
+}
+
+// The Car class extends the abstract Vehicle class
+class Car extends Vehicle {
+  // Overriding the abstract method accelerate from the Vehicle class
+  @override
+  void accelerate() {
+    // Implementation of the accelerate method
+    print("Accelerating");
+  }
+}
