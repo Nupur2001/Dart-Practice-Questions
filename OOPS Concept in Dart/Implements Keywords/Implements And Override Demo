@@ -1,0 +1,63 @@
+void main() {
+  // Creating instances of Car and Truck
+  final car = Car();
+  final truck = Truck();
+
+  // Accessing the number of wheels of Car and Truck
+  print(car.noOfWheels); // Prints 4
+  print(truck.noOfWheels); // Prints 6
+
+  // Calling accelerate() method for Car and Truck
+  car.accelerate(); 
+  truck.accelerate(); 
+}
+
+// Parent class Automobile with default properties and methods
+class Automobile {
+  bool isEngineWorking = true; // Represents if the engine is working
+  bool isLightOn = false; // Represents if the lights are on
+  int noOfWheels = 4; // Default number of wheels
+
+  // Default accelerate method
+  void accelerate() {
+    print("Automobile Accelerating");
+  }
+}
+
+// Another parent class, Vehicle, to define alternative properties and methods
+class Vehicle {
+  int noOfWheels = 10; // Default number of wheels for Vehicle
+
+  // Default accelerate method for Vehicle
+  void accelerate() {
+    print("Vehicle Accelerating");
+  }
+}
+
+// Car class extends Automobile and implements Vehicle
+class Car extends Automobile implements Vehicle {
+  @override
+  int noOfWheels = 4; // Overrides the noOfWheels property from Vehicle
+
+  @override
+  void accelerate() {
+    // Overrides the accelerate method from Vehicle
+    print(isEngineWorking); // Accesses property from Automobile
+    print(isLightOn); // Accesses property from Automobile
+    print(noOfWheels); // Uses its overridden property
+  }
+}
+
+// Truck class extends Automobile and implements Vehicle
+class Truck extends Automobile implements Vehicle {
+  @override
+  int noOfWheels = 6; // Overrides the noOfWheels property from Vehicle
+
+  @override
+  void accelerate() {
+    // Overrides the accelerate method from Vehicle
+    print(isEngineWorking); // Accesses property from Automobile
+    print(isLightOn); // Accesses property from Automobile
+    print(noOfWheels); // Uses its overridden property
+  }
+}
