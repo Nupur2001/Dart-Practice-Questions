@@ -1,0 +1,35 @@
+void main() {
+  // Creating a Cat object and calling the sound method
+  // This demonstrates polymorphism as the 'sound' method in Cat is overridden
+  Cat cat = Cat();
+  cat.sound(); // Outputs: Cat making sound
+
+  // Creating a Dog object and calling the sound method
+  // This also demonstrates polymorphism as the 'sound' method in Dog is overridden
+  Dog dog = Dog();
+  dog.sound(); // Outputs: Dog making sound
+}
+
+class Animal {
+  // Base class method
+  // This is the general 'sound' method for all animals
+  void sound() {
+    print("Animal making sound");
+  }
+}
+
+class Cat extends Animal {
+  // Override the sound method to provide specific behavior for Cat
+  @override
+  void sound() {
+    print("Cat making sound");
+  }
+}
+
+class Dog extends Animal {
+  // Override the sound method to provide specific behavior for Dog
+  @override
+  void sound() {
+    print("Dog making sound");
+  }
+}
